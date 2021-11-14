@@ -1,0 +1,18 @@
+#mainDiv, .alert {
+    margin: 1em 1em 1em 2em;
+    width: 80%;
+}
+div {
+    display: block;
+}
+body, .card {
+    background-color: #1b1e21;
+    color: lightgray;
+}
+p{
+    text-align: justify;
+    width: 75%;
+}
+.alert {
+    display: inline-block;
+}

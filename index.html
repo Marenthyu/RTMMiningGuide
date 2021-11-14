@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+              rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <script crossorigin="anonymous"
+                integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script crossorigin="anonymous"
+                integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <title>Mining Guide</title>
+    </head>
+    <body>
+        <div class="alert alert-danger">Please always be careful when dealing with Cryptocurrencies. Make sure you know
+            what you're doing! <b>This is not financial or legal advice.
+                Contact a finance person or lawyer for that.</b></div>
+        <div id="mainDiv">
+            <h1>RTM basic Mining Guide</h1>
+            <hr>
+            <h2>Required Reading</h2>
+            <p>Welcome! I assume you are here to get into Raptoreum Mining. You are free to just skip to the steps to
+                get going,
+                but don't blame me or come asking about things explained here. Be sure to understand what you're dealing
+                with -
+                Cryptocurrencies are volatile and you can lose your investment. <b>This is not financial or legal
+                    advice.
+                    Contact a finance person or lawyer for that.</b></p>
+            <p>Long Story Short: You can use your Computer Power to get virtual Money. Raptoreum specifically is best
+                mined with CPUs that have a large L3 Cache with GPUs being way less efficient.</p>
+            <p><b>About Randomness:</b> GhostRider (the algorithm used for Raptoreum) is also random at its core - <b>
+                This means you will not get a stable hashrate. Your hashrate may be lower than expected.
+            </b></p>
+            <p>Old CPUs won't give you much back, so I recommend against going with anything older than 4 years or
+                lower-end CPUs.</p>
+            <hr>
+            <h2>Getting Started</h2>
+            <p>First Things first: You will need a <b>Wallet</b> to store your earnings. This can be done online or
+                locally. I highly recommend
+                a local Wallet to keep your stuff private. This Guide will show <b>Raptoreum Core</b>. Go ahead and <a
+                        href="https://github.com/Raptor3um/raptoreum/releases/latest" target="_blank">Download it from
+                    GitHub</a>.
+                (Assuming you are on windows, you will want the file named <b>raptoreum-x.x.x.x-win64-setup.exe</b> -
+                Start it after downloading and follow the installation Wizard.)</p>
+            <p>Once completed, open "Raptoreum Core" - your <b>Wallet</b>. It will then ask you where to store the
+                Blockhain information. It will then go ahead and <b>synchronize</b> the blockchain to your computer -
+                <b>This will take a long time. This is not yet the mining process.</b> It will look like this: </p>
+            <img src="https://lowee.de/raptoreum-qt_2021-11-14_20-36-01.png" style="width: 50%">
+            <p>You can click on <b>Hide</b> to already use the application, but you will not see any up-to-date info
+                about the Blockchain before it is fully synced. At the time of writing, the initial Sync for me took
+                about 5 hours. You may be interested in using the provided <b>bootstrap.zip</b> File to finish quicker,
+                but I won't explain that here. For now, let's move on.</p>
+            <h3>Your receiving Address</h3>
+            <p>By starting up Raptoreum Core, the app will have generated a default wallet. You can (and should) encrypt
+                it with the <b>Settings</b> Menu, but we can also continue without it.</p>
+            <p>Click on <b>File</b>, then <b>Receiving Addresses...</b>. This is where you can see your Addresses you
+                can use to <b>Receive RTM</b>. Click on <b>New</b> in the bottom left, enter any <b>Label</b> you would
+                like (for example "FlockPool Mining") and click <b>OK</b>. Congratulations! You now have a receiving
+                Address you can use for Mining. Write it down somewhere!</p>
+            <h3>The Pool</h3>
+            <p>You could now start mining with the Wallet itself, but it will be very inefficient and you most likely
+                won't solve a block on your own. Thus, choose a <b>Mining Pool</b> of your choice. I recommend <a
+                        href="https://flockpool.com/" target="_blank">FlockPool</a>. Click on <b>Start Mining</b> on
+                their Website,
+                enter your <b>Receiving Address</b>, any arbitrary <b>Worker Name</b> you want as well as an optional
+                <b>Password</b> for this Pool. This Password is used to change your minimum Payout Threshold later.
+                Click on the
+                <svg aria-hidden="true" data-testid="ContentCopyRoundedIcon" focusable="false"
+                     style="height: 1rem; color: white;"
+                     viewBox="0 0 24 24">
+                    <path d="M15 20H5V7c0-.55-.45-1-1-1s-1 .45-1 1v13c0 1.1.9 2 2 2h10c.55 0 1-.45 1-1s-.45-1-1-1zm5-4V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2zm-2 0H9V4h9v12z"></path>
+                </svg>
+                Copy Icon and note down the generated config. You'll need it in a bit.
+            </p>
+            <h3>The Miner</h3>
+            <p>
+                Now you just need your <b>Mining Software</b> - if you want to squeeze out every last penny, go compile
+                it yourself and find one that fits you perfect; Otherwise, just go <a
+                    href="https://github.com/WyvernTKC/cpuminer-gr-avx2/releases/latest" target="_blank">here</a> and
+                download the <b>cpuminer-gr-x.x.x.x-x86_64_windows.7z</b>
+                File. Your Webbrowser will most likely warn you that the file is dangerous - this is technically correct
+                as mining software is often abused. But since that is what we want, you can accept the risk. In Chrome,
+                Open <b>All Downloads</b> by Pressing <b>CTRL+J</b>, then selecting to keep the File Anyway and
+                confirming the secondary warning.
+            </p>
+            <p>Once the file is downloaded, Extract it using an App like <a href="https://7-zip.org" target="_blank">7zip</a>.
+                Open Up the <b>config.json</b> File in a Text Editor like <a
+                        href="https://notepad-plus-plus.org/downloads/">Notepad++</a> and replace the contents with the
+                configuration you generated above. You can also toy with the other options if you want to. Save the file
+                and close Notepad++.</p>
+            <p><b>Congratulations!</b> You are now ready to Mine! Just launch the cpuminer.bat file as Administrator
+                (right-click it, then select <b>Run as Administrator</b>)!</p>
+            <div class="alert alert-danger"><b>NOTICE:</b> The first time you start the Miner, it will tune itself to
+                your specific setup for about 2 and a half hours. It may take a while, but is worth it to optimize your
+                Mining Efforts! <b>Do NOT interrupt this process or it wills tart from scratch!</b></div>
+            <p>After tuning completes, mining will start. The tuning will not need to be redone once finished, unless
+                you delete anything.</p>
+            <p>After a few minutes of Mining, you can head to your Pool's Website, enter your Receiving Address and see
+                your progress - with FlockPool, it should show after about 30 seconds of mining or when you get your
+                first share. FlockPool will then send you your payment twice a day at 8AM and 8PM UTC, if you are above
+                the Payout Threshold that you can change with the password you set.</p>
+            <p>Happy Mining!</p>
+        </div>
+
+    </body>
+</html>
